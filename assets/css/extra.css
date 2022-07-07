@@ -1,0 +1,9 @@
+#skills .img-fluid,
+.img-thumbnail {
+  max-width: 89%;
+  height: auto;
+  border-radius: 42px;
+}
+#skills {
+  background-color: rgb(245, 144, 17);
+}

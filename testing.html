@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .news-section {
+            margin-top: 50px;
+        }
+
+        /*news-section start*/
+        .news-section {
+            margin-top: 50px;
+        }
+
+        .news-section .news-thoughts {
+            width: 100%;
+            min-height: 645px;
+            display: block;
+            background: url("../img/news-thoughts-bg.jpg") no-repeat;
+            opacity: 0.9;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .news-section .video-section h2 {
+            font-size: 36px;
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+            padding-top: 70px;
+        }
+
+        .news-section .video-section h2:after {
+            content: "";
+            display: block;
+            border: 2px solid #f6821f;
+            width: 36px;
+            margin: 5px auto;
+        }
+
+        .news-section .video-section h2 span {
+            color: #f6821f;
+        }
+
+        .news-section .video-effect {
+            margin: 50px auto;
+            display: block;
+        }
+
+        /* Slider */
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-slider {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .slick-list {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slick-list:focus {
+            outline: none;
+        }
+
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .slick-slider .slick-track,
+        .slick-slider .slick-list {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .slick-track {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track:after {
+            clear: both;
+        }
+
+        .slick-loading .slick-track {
+            visibility: hidden;
+        }
+
+        .slick-slide {
+            display: none;
+            float: left;
+            height: 100%;
+            min-height: 1px;
+        }
+
+        [dir='rtl'] .slick-slide {
+            float: right;
+        }
+
+        .slick-slide img {
+            display: block;
+        }
+
+        .slick-slide.slick-loading img {
+            display: none;
+        }
+
+        .slick-slide.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized .slick-slide {
+            display: block;
+        }
+
+        .slick-loading .slick-slide {
+            visibility: hidden;
+        }
+
+        .slick-vertical .slick-slide {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+
+        .slick-arrow.slick-hidden {
+            display: none;
+        }
+
+        button.slick-prev.slick-arrow img {
+            width: 9px;
+        }
+
+        button.slick-prev.slick-arrow {
+            top: -70px;
+            right: 166px;
+            position: absolute;
+            background: none;
+            border: 1px solid gray;
+            padding: 7px 15px;
+            outline: none;
+            border-radius: 4px;
+
+        }
+
+        button.slick-next.slick-arrow img {
+            width: 9px;
+        }
+
+        button.slick-next.slick-arrow {
+            position: absolute;
+            top: -70px;
+            right: 35px;
+            background: none;
+            border: 1px solid gray;
+            padding: 7px 15px;
+            outline: none;
+            border-radius: 4px;
+        }
+
+        .client-postion img {
+            width: 70px;
+        }
+
+        .gallery-con button.slick-prev.slick-arrow {
+            top: 90%;
+            right: 15%;
+            position: absolute;
+            background: none;
+            border: none;
+            padding: 7px 15px;
+            outline: none;
+            border-radius: 4px;
+            z-index: 999;
+        }
+
+        .gallery-con button.slick-next.slick-arrow {
+            top: 90%;
+            right: 12%;
+            position: absolute;
+            background: none;
+            border: none;
+            padding: 7px 15px;
+            outline: none;
+            border-radius: 4px;
+            z-index: 999;
+        }
+
+        .gallery-con button.slick-next.slick-arrow img {
+            width: 13px;
+        }
+
+        .gallery-con button.slick-prev.slick-arrow img {
+            width: 13px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <section>
+        <div class="news-section">
+            <div class="news-thoughts">
+                <div class="video-section wow animate zoomIn">
+                    <h2><span>All The</span> News, Thoughts And Vibes</h2>
+                </div>
+                <div class="video-effect tube slider">
+                    <div class="slide">
+                        <iframe width="680" height="400" src="https://www.youtube.com/embed/fWmCeYuu1p8" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="slide">
+                        <iframe width="680" height="400" src="https://www.youtube.com/embed/xgDzQEibK04" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"
+        type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="lazy-load.js"></script>
+    <link href="lazy-slide.css">
+    <script>
+
+        /////////////////////tube slider js start/////////////
+
+        $(document).ready(function () {
+            $('.tube').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4000,
+                arrows: true,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }]
+            });
+        });
+/////////////////////tube slider js end/////////////
+    </script>
+</body>
+
+</html>
+
+
+
+
+ <!-- ======= Appointment Section ======= -->
+
+        <!-- <section id="appointment" class="appointment section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Make an Appointment</h2>
+                    <p></p>
+                </div>
+
+                <form method="post" role="form" autocapitalize="off" name="google-sheet" class="php-email-form"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="tel" class="form-control" name="phoneno" id="phoneno" placeholder="Your Phone">
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="date" name="Appointmentdate" class="form-control datepicker" id="date"
+                                placeholder="Appointment Date">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="tel" class="form-control" name="phoneno" id="Transtion"
+                                placeholder="Your Transtion Id">
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" id="msg" name="Message" rows=" 5"
+                            placeholder="Message (Optional )"></textarea>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="loading">Loading</div>
+                        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button id="btnsubmitclick" type="submit" name="submit">Make an
+                            Appointment</button>
+                        <button id="classsend" type="submit" disabled="disabled" name="submit"
+                            style="cursor: no-drop;display:none;">Sending...
+                            <div role="status" style="vertical-align: middle;font-size: 11px;width: 15px;height: 15px;"
+                                class="spinner-border"><span class="sr-only">Loading...</span></div>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </section> -->
+        <!-- End Appointment Section -->
+
+
+
+
+
+
+
+
+
+
+        <section id="testimonials" class="testimonials" style="display:none;">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Testimonials</h2>
+                    <p></p>
+                </div>
+        
+                <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
+        
+                    <div class="testimonial-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2VrJ4HFgIV0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="testimonial-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2VrJ4HFgIV0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="testimonial-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/BMeiVXELAsU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="testimonial-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hl7gs4RSYYg"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+        
+                    <div class="testimonial-item">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/nuey5TV7Iq8"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+        
+        <!-- End Testimonials Section -->
+        
+        <section style="display: none;">
+            <section class="pt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="mb-3"> </h3>
+                        </div>
+                        <div class="col-6 text-right">
+                            <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button"
+                                data-slide="prev">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
+                            <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button"
+                                data-slide="next">
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row">
+        
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <!-- <img class="img-fluid" alt="100%x280"
+                                                        src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                                     -->
+                                                    <iframe id="ytplayer" style="height: 334px !important;"
+                                                        class="img-fluid" type="text/html" width="640" height="500"
+                                                        src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                        frameborder="0"></iframe>
+        
+        
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                    src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                    frameborder="0"></iframe>
+        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                    src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                    frameborder="0"></iframe>
+        
+                                                </div>
+                                            </div> -->
+        
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+        
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;"
+                                                        class="img-fluid" type="text/html" width="640" height="500"
+                                                        src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                        frameborder="0"></iframe>
+        
+        
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                    src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                    frameborder="0"></iframe>
+        
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                    src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                    frameborder="0"></iframe>
+                                                </div>
+                                            </div> -->
+        
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row">
+        
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;"
+                                                        class="img-fluid" type="text/html" width="640" height="500"
+                                                        src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                        frameborder="0"></iframe>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                     src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                     frameborder="0"></iframe>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="card">
+                                                    <iframe id="ytplayer" style="height: 334px !important;" class="img-fluid" type="text/html" width="640" height="500"
+                                                    src="https://www.youtube.com/embed/fSV55bQfbfY"
+                                                    frameborder="0"></iframe>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </section>
+
+
+
+
+
+        <section id="testimonials" class="testimonials">
+
+            <div class="container aos-init aos-animate" data-aos="fade-up">
+      
+              <header class="section-header">
+                <h2>Testimonials</h2>
+                <p>What they are saying about us</p>
+              </header>
+      
+              <div class="testimonials-slider swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper" style="transform: translate3d(-2160px, 0px, 0px); transition-duration: 0ms;" id="swiper-wrapper-ee4d63197b897222" aria-live="off"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" style="width: 432px;" role="group" aria-label="1 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                      </div>
+                    </div>
+                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" style="width: 432px;" role="group" aria-label="2 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                      </div>
+                    </div>
+                  </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 432px;" role="group" aria-label="3 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                      </div>
+                    </div>
+                  </div>
+      
+                  <div class="swiper-slide" data-swiper-slide-index="0" style="width: 432px;" role="group" aria-label="4 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+      
+                  <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 432px;" role="group" aria-label="5 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+      
+                  <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 432px;" role="group" aria-label="6 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+      
+                  <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 432px;" role="group" aria-label="7 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+      
+                  <div class="swiper-slide" data-swiper-slide-index="4" style="width: 432px;" role="group" aria-label="8 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                      </div>
+                    </div>
+                  </div><!-- End testimonial item -->
+      
+                <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 432px;" role="group" aria-label="9 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                      </div>
+                    </div>
+                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 432px;" role="group" aria-label="10 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                      </div>
+                    </div>
+                  </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" style="width: 432px;" role="group" aria-label="11 / 11">
+                    <div class="testimonial-item">
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                      <p>
+                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                      </p>
+                      <div class="profile mt-auto">
+                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                      </div>
+                    </div>
+                  </div></div>
+                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span></div>
+              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            </div>
+          </section>
+
+          
+          <a href="sss" style="position: fixed;z-index: 99999;top: 50%;right: 0;/*! color: green; */padding: 27px 58px;/*! border-radius: 15px; */background: url(&quot;assets/wsdsd - Copy.svg&quot;) 4%;background-repeat: no-repeat;/*! background-size: inherit; */background-color: #008000;border: 1px dashed red;"><p style="margin: 0;margin-left: 30px;">Tele Consulation</p></a>
